@@ -1,5 +1,5 @@
 import hu.fenyvesvolgyimate.storeregister.SlimStoreRegister;
-import hu.fenyvesvolgyimate.storeregister.StorePesristenceType;
+import hu.fenyvesvolgyimate.storeregister.StorePersistenceType;
 import hu.fenyvesvolgyimate.storeregister.StoreRegister;
 import hu.fenyvesvolgyimate.storeregister.exception.ItemNotAvailableException;
 import org.junit.jupiter.api.Assertions;
@@ -20,7 +20,7 @@ class StoreRegisterSystemTest {
         secondProductName = "ProductTwo";
         firstProductName = "ProductOne";
         storeRegister = new SlimStoreRegister();
-        storeRegister.setPersistanceType(StorePesristenceType.InMemory);
+        storeRegister.setPersistanceType(StorePersistenceType.InMemory);
     }
 
     @Test
@@ -36,6 +36,8 @@ class StoreRegisterSystemTest {
         addStoreItems();
 
         soldNumberOfItem = storeRegister.sellProductItem(firstProductName, 1);
+
+
         assertEquals(1, soldNumberOfItem);
         soldNumberOfItem = storeRegister.sellProductItem(secondProductName, 5);
         assertEquals(5, soldNumberOfItem);
@@ -76,7 +78,7 @@ class StoreRegisterSystemTest {
 
     @Test
     void useFileStorage() {
-        storeRegister.setPersistanceType(StorePesristenceType.File);
+        storeRegister.setPersistanceType(StorePersistenceType.File);
 
         addStoreItems();
 

@@ -1,5 +1,5 @@
 package hu.fenyvesvolgyimate.storeregister;
 
-public enum StorePesristenceType {
+public enum StorePersistenceType {
     File, InMemory
 }

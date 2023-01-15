@@ -1,11 +1,12 @@
 package hu.fenyvesvolgyimate.storeregister;
 
 public interface StoreRegister {
-    void setPersistanceType(StorePesristenceType inMemory);
-
-    int sellProductItem(String productName, int amount);
-
-    void buyProductItem(String productName, int amount);
+    void setPersistanceType(StorePersistenceType storePersistenceType);
 
     void createProduct(String productName);
+
+    void buyProductItem(String productName, int numberOfProduct);
+
+    int sellProductItem(String productName, int numberOfProduct);
+
 }
