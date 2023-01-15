@@ -28,7 +28,7 @@ public class InMemoryStoreItemRepository implements StoreItemRepository {
 
     @Override
     public void saveItem(StoreItem storeItem) {
-        String sql = null;
+        String sql;
         if (isStoreItemNotExists(storeItem)) {
             sql = """
                     INSERT INTO STORE_ITEMS(product_name, amount) VALUES('%s', %d)
@@ -88,7 +88,6 @@ public class InMemoryStoreItemRepository implements StoreItemRepository {
                      WHERE product_name = ?
                      """)) {
             preparedStatement.setString(1, productName);
-            System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
                 int amountOfItem = rs.getInt("amount");
