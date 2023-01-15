@@ -6,7 +6,7 @@ public class StoreItemRepositoryFactory {
     public StoreItemRepository create(StorePersistenceType storePersistenceType) {
         return switch (storePersistenceType) {
             case InMemory -> new InMemoryStoreItemRepository();
-            default -> null;
+            case File -> new FileStoreItemRepository();
         };
     }
 }
