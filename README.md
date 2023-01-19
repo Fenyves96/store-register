@@ -3,7 +3,7 @@
 - Upload to local .m2 repository:
 ```
 mvn install:install-file \
--Dfile="D:\dev\projects\Store Register\target\store-reigster-1.0-jar-with-dependencies.jar" \ --path to the jar
+-Dfile="D:\dev\projects\Store Register\target\store-register-1.0-jar-with-dependencies.jar" \ --path to the jar
 -DgroupId=hu.fenyvesvolgyimate \
 -DartifactId=store-register \
 -Dversion=1.0 \
